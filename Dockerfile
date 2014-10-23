@@ -15,11 +15,14 @@ RUN	apt-get install -qy --force-yes git supervisor
 RUN	apt-get -yq install libjpeg8-dev libpng-dev libfreetype6-dev zlib1g-dev libopenjpeg-dev libwebp-dev git python-pip
 RUN	cd /srv && git clone https://github.com/styxit/HTPC-Manager.git htpc-manager
 
-#Expose HTPC Manager port
+# Expose HTPC Manager port
 EXPOSE	8085
 
 RUN	apt-get install -qy python-imaging python-psutil python-pil
 # Clean up
 RUN	apt-get clean && rm -rf /tmp/* /var/tmp/* && rm -rf /var/lib/apt/lists/* && rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup
+
+# Create a volume for HTPC Manager's data and config
+VOLUME	/srv/htpc-manager/userdata
 
 ENTRYPOINT	["/usr/bin/python", "/srv/htpc-manager/Htpc.py"]
