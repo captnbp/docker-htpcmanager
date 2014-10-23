@@ -11,19 +11,19 @@ For more information on HTPC Manager and check out it's [website][1].
 Running this will build you a docker image with the latest version of both
 docker-htpcmanager and HTPC Manager itself.
 
-    docker build -t captainebp/docker-htpcmanager git://github.com/captainebp/docker-htpcmanager.git
+    docker build -t captnbp/docker-htpcmanager git://github.com/captnbp/docker-htpcmanager.git
 
 
 ## Running HTPC Manager
 
 You can run this container with:
 
-    sudo docker run -p 8085:8085 -v /myconfigfolder/userdata:/srv/htpc-manager/userdata captainebp/docker-htpcmanager
+    sudo docker run -p 8085:8085 -v /myconfigfolder/userdata:/srv/htpc-manager/userdata captnbp/docker-htpcmanager
 
 From now on when you start/stop docker-htpcmanager you should use the container id
 with the following commands. To get your container id, after you initial run
 type `sudo docker ps` and it will show up on the left side followed by the image
-name which is `captainebp/docker-htpcmanager:latest`.
+name which is `captnbp/docker-htpcmanager:latest`.
 
     sudo docker start <container_id>
     sudo docker stop <container_id>
