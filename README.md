@@ -18,7 +18,7 @@ docker-htpcmanager and HTPC Manager itself.
 
 You can run this container with:
 
-    sudo docker run -p 8085:8085 -v /myconfigfolder/userdata:/srv/htpc-manager/userdata captnbp/docker-htpcmanager
+    sudo docker run -d -p 8085:8085 -v /myconfigfolder/userdata:/srv/htpc-manager/userdata captnbp/docker-htpcmanager
 
 From now on when you start/stop docker-htpcmanager you should use the container id
 with the following commands. To get your container id, after you initial run
